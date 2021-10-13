@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Fiction Multipage Bootstrap Template</title>
+    <title>Template Matching</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -76,7 +76,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand logo" href="index.html">
-        <img src="images/logo-yellow.png" alt="">
+        <img src="images/tree-logo.png" alt="">
       </a>
     </div>
 
@@ -87,217 +87,161 @@
         <li><a href="template.html">Template Matching</a></li>
         <li><a href="hough.html">Hough Transform</a></li>
         <li><a href="hausdorff.html">Hausdorff Distance</a></li>
+        <!--<li><a href="contact.html">Contact</a></li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
 
-<section class="page-header services-header" data-parallax="scroll" data-image-src="images/header/services-folding-img.jpg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center"> Our Services. <br> We Ensure Quality Design.</h1>
+ <!-- Hero Area -section
+  =========================-->
+  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src="images/slider/tree6.jpg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1> <br>
+            Template Matching</h1>
+        </div>
       </div>
+    </div>
+  </header>
+
+ <!-- Case Study Sections
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Introduction</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description"> Template matching is the process of detecting the presence and location of a smaller image, called a template in a larger image. There are two issues that are faced by template matching that need to be solved for and they are: rotation and scale. These issues are solved with the extraction of parameters for this algorithm. <br><br>
+				The template matching system had 3 stages to it. The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
+
+				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
+
+				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
+				 </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+  
+
+<!-- Clients Sections
+=========================-->
+<section class="clients" data-parallax="scroll" data-image-src="images/slider/orchard2.jpg">
+  <div class="section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title text-center">
+            <h2>Project Goals</h2>
+          </div>
+          <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0 slider-main">
+            <div class="testimonial-slider">
+              <div class="item">
+                <!-- Slider item -->
+                <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
+                <div class="testimonials-area">
+                  <!-- <div class="round-shape"></div> -->
+                  <h5> Pre-processing: Parameter extraction and scale, rotation detection.</h5>
+                  <br>
+                  <br>
+                  <h5>  Template Matching: executing template matching algorithm and scoring results according to number of matches and correlation scores
+                  </h5>
+				  <br>
+                  <br>
+                  <h5>  Match Analysis: Calculates final scores based on high scores post penalities and determine pattern present.
+                  </h5>
+                  
+                </div>
+                <!-- </div> -->
+                <!-- End Slider item -->
+              </div>
+              <div class="item">
+                <!-- Slider item -->
+                <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
+                <div class="testimonials-area">
+                  <!-- <div class="round-shape"></div> -->
+                  <p class="testimonials-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                    volutpat. Ut wisi enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nemo vitae natus odio quasi recusandae, esse! Libero ipsum cum aliquid, nisi, maiores animi iste
+                    vel consectetur error facilis quae ducimus .
+                  </p>
+                  <div class="author">
+                    <img src="images/clients-img1.png" alt="Clients">
+                    <h3 class="author-name">Paul Lapkin</h3>
+                    <span class="designation">CEO at DeviserWeb</span>
+                  </div>
+                </div>
+                <!-- </div> -->
+                <!-- End Slider item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.End row -->
     </div>
   </div>
 </section>
 
-  <!-- Service Item Sections 
+ <!-- Case Study Sections
   =========================-->
-  <section class="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title text-center">
-            <h2>Our Services</h2>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-item text-center">
-            <div class="services-icon">
-              <i class="tf-mobile"></i>
-            </div>
-            <h4 class="service-title">Mobile App UI</h4>
-            <p class="service-description">
-              We provide various  mobile app UI Design services Android, ios,windows phone. As well as we follow latest trend in our molestie consequat .
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-item text-center">
-            <div class="services-icon">
-              <i class="tf-telescope"></i>
-            </div>
-            <h4 class="service-title">Mobile App UI</h4>
-            <p class="service-description">
-              We provide various  mobile app UI Design services Android, ios,windows phone. As well as we follow latest trend in our molestie consequat .
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-item text-center">
-            <div class="services-icon">
-              <i class="tf-presentation"></i>
-            </div>
-            <h4 class="service-title">Mobile App UI</h4>
-            <p class="service-description">
-              We provide various  mobile app UI Design services Android, ios,windows phone. As well as we follow latest trend in our molestie consequat .
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-item text-center">
-            <div class="services-icon">
-              <i class="tf-strategy"></i>
-            </div>
-            <h4 class="service-title">Mobile App UI</h4>
-            <p class="service-description">
-              We provide various  mobile app UI Design services Android, ios,windows phone. As well as we follow latest trend in our molestie consequat .
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-item text-center">
-            <div class="services-icon">
-              <i class="tf-anchor2"></i>
-            </div>
-            <h4 class="service-title">Mobile App UI</h4>
-            <p class="service-description">
-              We provide various  mobile app UI Design services Android, ios,windows phone. As well as we follow latest trend in our molestie consequat .
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-item text-center">
-            <div class="services-icon">
-              <i class="tf-globe"></i>
-            </div>
-            <h4 class="service-title">Mobile App UI</h4>
-            <p class="service-description">
-              We provide various  mobile app UI Design services Android, ios,windows phone. As well as we follow latest trend in our molestie consequat .
-            </p>
-          </div>
-        </div>
-      </div>
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Introduction</h2>
     </div>
-  </section>
-
-
-  <!-- Pricing Table Sections 
-  =========================-->
-  <section class="pricing-table">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title text-center">
-            <h2>Our Pricing</h2>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="table text-center">
-            <!-- pricing table
-            ===================== -->
-            <div class="table-price border-effect">
-              <h4 class="pricing-title">extended Version</h4>
-              <h2 class="price">&#36; 89.00</h2>
-              <p class="table-month">/ Month</p>
-            </div>
-            <div class="pricing-list border-effect">
-              <ul class="features-list">
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Web Design Service
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Web Development
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Mobile Application
-                  </p>
-                </li>
-              </ul>
-              <input type="button" class="btn btn-default btn-main th-btn-border" value="Order Now">
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description">Food security is a large problem faced globally with many factors influencing it such as high population growth, global warming and poor agricultural systems. As the human population continues to rise at an exponential rate the need for food security has become a pertinent issue. Agriculturalists have to look to alternative methods to produce larger amounts of food whilst facing land constraints. This has given rise to the concept of precision agriculture. This is a practise that assists farmers in making management decisions through abstracting data from technology such as satellites, drones, robots and sensors. The data collected via the technology allows farmers to monitor their crops more closely and efficiently.These findings can be used to evaluate yield, soil condition, plant health, fertilizer and pesticide effect and irrigation.
+                This project serves to analyze the most effective yield that can be produced by planting patterns. Farmers organize their orchards into different planting patterns to assist with the many aspects of farm management, such as efficient irrigation and cross-pollination, accessibility for farm equipment and for ease of harvesting. These structures affect the system
+                management recommendations produced through precision agriculture, and assist in providing a strong preliminary for detecting individual trees, as well as identifying locations where trees are missing.
+                There have been many studies conducted over the years to determine the most optimal structure and density for plants per unit area. There is a vast array of results as certain experiments yield different results and it is challenging to determine one specific pattern that Is the best, holding all other factors constant. Using precision farming to detect these patterns in orchards and accurately determine the most suitable structures based on the real data. </p>
+             
+              <!-- View More Details -->
+              
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="table text-center">
-            <!-- pricing table
-            ===================== -->
-            <div class="table-price border-effect">
-              <h4 class="pricing-title">Standard Version</h4>
-              <h2 class="price">&#36; 109.00</h2>
-              <p class="table-month">/ Month</p>
-            </div>
-            <div class="pricing-list border-effect">
-              <ul class="features-list">
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Web Design Service
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Web Development
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Mobile Application
-                  </p>
-                </li>
-              </ul>
-              <input type="button" class="btn btn-default btn-main th-btn-border" value="Order Now">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="table text-center">
-            <!-- pricing table
-            ===================== -->
-            <div class="table-price border-effect">
-              <h4 class="pricing-title">Premium Version</h4>
-              <h2 class="price">&#36; 300.00</h2>
-              <p class="table-month">/ Month</p>
-            </div>
-            <div class="pricing-list border-effect">
-              <ul class="features-list">
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Web Design Service
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Web Development
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <i class="tf-ion-ios-checkmark-outline" aria-hidden="true"></i> 
-                    Mobile Application
-                  </p>
-                </li>
-              </ul>
-              <input type="button" class="btn btn-default btn-main th-btn-border" value="Order Now">
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/home/drone2.jpg" alt="">
             </div>
           </div>
         </div>
       </div>
     </div>
+   
   </section>
+
 
     <footer class="footer">
         <div class="container">
@@ -309,10 +253,10 @@
                             ========================== -->
                             <div class="footer-about">
                                 <h3 class="footer-title">About</h3>
-                                <p>Nemo enim ipsam voluptatem quia voluptas <br>
-                                    sit aspernatur aut odit aut fugit, sed quia <br>
-                                    magni dolores eos qui ratione. ed quia <br>
-                                    magni dolores</p>
+                                <p>A team of 3 honours students <br>
+                                    soving the problem of orchard structure <br>
+                                    classification for the company Aerobotics. <br>
+                                    Computer Science Honours 2021.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -320,11 +264,10 @@
                             ========================== -->
                             <div class="footer-address">
                                 <h3 class="footer-title">Address</h3>
-                                <p>DeviserWeb 24/A,Jalalabad amborkhana amagnina, Sylhet.</p>
-                                <p class="contact-address">
-                                    Contact us : <a href="tel:+610383666274">+61 (0) 3 8366 6274 </a> <br>
-                                    Write us : <a href="mailto:info@info.com">mail@itsnuman.com</a>
-                                </p>
+                                <p>Computer Science Department <br>
+				University of Cape Town <br>
+				Private Bag X3 <br>
+				Rondebosch</p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -391,7 +334,3 @@
     </body>
 
     </html>
-
-
-
-  
