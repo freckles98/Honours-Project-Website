@@ -108,13 +108,11 @@
 
  <!-- What is TM
   =========================-->
-
   <section class="case-study">
     <div class="text-center">
       <h2 class="title">What is Template Matching?</h2>
     </div>
-    <!-- Case Study Description
-      top section -->
+    <!-- top section -->
     <div class="case-study-content">
       <div class="container">
         <div class="row">
@@ -122,21 +120,17 @@
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description"> Template matching is the process of detecting the presence and location of a smaller image, called a template in a larger image. There are two issues that are faced by template matching that need to be solved for and they are: rotation and scale. These issues are solved with the extraction of parameters for this algorithm. <br><br>
-				The template matching system had 3 stages to it. The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
-
-				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
-
-				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
+              <p class="case-description">Template matching is the process of determining the presence and/or position of a smaller  image, called a template, in a larger image. In the case of planting patterns, they are made up of repeating geometric shapes such as squares and triangles. By creating a template of the geometric shapes we can use template matching to determine the planting pattern that is present in the dataset. <br> <br>
+					Template matching has 2 issues that must be overcome: rotation and scale. The template is only tested in the size and rotation that it is set to. The system must either detect the rotation of the dataset or test every rotation (which is extremely inefficient). To solve scale the templates must be sized to every scale that we want to test for so either we test detect a number of possible scales or test for every possible scale (inefficient). <br> <br>
+					This page will show you how we developed the system to maximise efficiency without compromising on the template matching approach.
 				 </p>
              
               <!-- View More Details -->
-              
             </div>
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/Template/TMExample.png" alt="">
             </div>
           </div>
         </div>
@@ -145,6 +139,42 @@
    
   </section>
   
+  <!-- Aims
+=========================-->
+<section class="clients" data-parallax="scroll" data-image-src="images/home/orchard.jpg">
+  <div class="section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title text-center">
+            <h2>Project Aims</h2>
+          </div>
+          <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0 slider-main">
+            <div class="testimonial-slider">
+              <div class="item">
+                <!-- Slider item -->
+                <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
+                <div class="testimonials-area">
+                  <!-- <div class="round-shape"></div> -->
+                  <h5> Primary aim: To detect planting patterns from aerial footage of orchards using template matching techniques</h5>
+                  <br>
+                  <br>
+                  <h5> Secondary Aim: Extract key parameters about the orchard such as intra-row and inter-row spacing.
+                  </h5>
+                  
+                </div>
+                <!-- </div> -->
+                <!-- End Slider item -->
+              </div>
+                <!-- End Slider item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.End row -->
+    </div>
+  </div>
+</section>
   
   <!-- Algorithm
   =========================-->
@@ -162,11 +192,9 @@
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description"> Template matching is the process of detecting the presence and location of a smaller image, called a template in a larger image. There are two issues that are faced by template matching that need to be solved for and they are: rotation and scale. These issues are solved with the extraction of parameters for this algorithm. <br><br>
-				The template matching system had 3 stages to it. The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
-
+              <p class="case-description">To create a system that can solve for both of the aims of the project, a 3 step system was determined. These steps set up the necessary information for the next step while balancing accuracy and efficiency.<br><br>
+				The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
 				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
-
 				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
 				 </p>
              
@@ -176,7 +204,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/Template/TMFlow.jpg" alt="">
             </div>
           </div>
         </div>
@@ -215,7 +243,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/Template/RowDetection.png" alt="">
             </div>
           </div>
         </div>
@@ -247,7 +275,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/Template/RowDetection.png" alt="">
             </div>
           </div>
         </div>
@@ -403,7 +431,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/home/TemplateMatching/TM1.jpg" alt="">
             </div>
           </div>
         </div>
