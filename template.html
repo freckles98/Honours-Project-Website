@@ -306,13 +306,10 @@
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description"> Template matching is the process of detecting the presence and location of a smaller image, called a template in a larger image. There are two issues that are faced by template matching that need to be solved for and they are: rotation and scale. These issues are solved with the extraction of parameters for this algorithm. <br><br>
-				The template matching system had 3 stages to it. The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
+              <p class="case-description"> The system generates templates for each of the patterns that it is testing for: square, rectangle, triangle, hexagonal and double hedge row. <br><br>
+									A template is generated for each template according to each scale detected. The number of templates generated is O(n) for square and hexagonal and O(2n) for the other templates. This is because they take in two input of intra-row and inter-row spacing. This is limited in two ways, there is a maximum amount of scales that can be detected because scale detection is done by returning the most common scales. Secondly the program maintains efficiency even if every possible scale is detected because it breaks the image up into sub images. <br><br>
 
-				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
-
-				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
-				 </p>
+									 </p>
              
               <!-- View More Details -->
               
@@ -320,7 +317,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/Template/Templates.jpg" alt="">
             </div>
           </div>
         </div>
@@ -345,13 +342,13 @@
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description"> Template matching is the process of detecting the presence and location of a smaller image, called a template in a larger image. There are two issues that are faced by template matching that need to be solved for and they are: rotation and scale. These issues are solved with the extraction of parameters for this algorithm. <br><br>
-				The template matching system had 3 stages to it. The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
+              <p class="case-description"> There are two types of penalties in this system. If the spacing is different within and between rows by more than 1.5 times then the square and equilateral triangles are penalised; else it’s the rectangle and Isosceles that are penalised. <br><br>
 
-				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
+										If the average angle of closest points between rows is around 90 degrees the triangle templates are penalised. Else the square and rectangle templates are penalised.<br><br>
 
-				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
-				 </p>
+										This is done so that the noise does not return false positives from the template matching. The spacing penalisation is fairly arbitrary, but it is necessary to have a cut off point else the rectangle and isosceles templates would not be able to be differentiated from the square and equilateral triangle templates. <br><br>
+
+										 </p>
              
               <!-- View More Details -->
               
@@ -359,7 +356,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/Template/SqRect.jpg" alt="">
             </div>
           </div>
         </div>
@@ -397,7 +394,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/home/TemplateMatching/TM1.jpg" alt="">
+              <img class="img-responsive" src="images/Template/Quincunx.jpg" alt="">
             </div>
           </div>
         </div>
