@@ -49,9 +49,19 @@ h4 {
 }
 
 h5 {
-  font-size: 30px;
+  font-size: 27px;
+  font-family: "Arial";
+  color: #ffff;
+}
+
+h6{
+  font-size: 26px;
   font-family: "Roboto", sans-serif;
   color: #ffff;
+}
+
+h6:hover {
+  color: #000;
 }
 
 p {
@@ -790,6 +800,9 @@ div.loading {
   background: #fff;
 }
 
+.client-logo .block:hover{
+  text-emphasis-color: #000;
+}
 .clients-logo .block:hover img {
   -webkit-filter: invert(1);
 }
