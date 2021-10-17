@@ -123,7 +123,7 @@
                 <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
                 <div class="testimonials-area">
                   <!-- <div class="round-shape"></div> -->
-                  <h5> In this apporach, we use the Hausdorff Distance paired with and optimisation algorithm to identify planting patterns within trees. We use the centroid of each tree to represent the tree and identify patterns within the points. The Hausdorff Distance assesses the degree of similarity between a planting pattern and the data. Three different Hausdorff methods are used to evaluate the data and determine the best approach. The optimisation algorithm finds the best matches over the entire data set. The aim of the project is: </h5>
+                  <h5> In this approach, we use the Hausdorff Distance paired with and optimisation algorithm to identify planting patterns within trees. We use the centroid of each tree to represent the tree and identify patterns within the points. The Hausdorff Distance assesses the degree of similarity between a planting pattern and the data. Three different Hausdorff methods are used to evaluate the data and determine the best approach. The optimisation algorithm finds the best matches over the entire data set. The aim of the project is: </h5>
                   <br>
                   <br>
                   <h5> 1. Evaluate the which Hausodrff method is best suited to the problem.
@@ -175,7 +175,7 @@
                 <br>
                 Where ||ℎ||acts as the normaliser. It is assumed in this paper that
                 this is the Euclidean norm. (1) is known as the undirected Hausdorff
-                distance and (2) and (3) are known as the directed Hausdorff [12].
+                distance and (2) and (3) are known as the directed Hausdorff.
                 To summarize, each point within the point set A determines the
                 closest point in point set B and vice versa. Of those points, the
                 maximum distance is found in point set A and the maximum is taken
@@ -261,8 +261,105 @@
     </div>
    
   </section>
-  
 
+
+   <!-- Variations
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Hausdorff Distance Variations</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description"> 
+                There are three variations of the Hausdorff Distance found in literature. These methods are:<br>
+                <br><b>1. Modified Exact<br>2. Partial<br>3. Average</b>
+                <br><br>
+                They were all implemented within the experiement to asses viability. As the search for the nearest neighbour is a computaionally expensive calculation of 𝑂(𝑛2), a CKD-tree is used. This tree structure is a
+                binary tree that stores points in a multi dimensional space. When
+                searching for the nearest point, it recursively divides the space thus
+                reducing the search space by half each iteration. It can
+                effectively perform the nearest neighbour search with a query time
+                of 𝑂(𝑙𝑜𝑔(𝑛)). <br> <br>
+                The <b>modified exact Hausdorff distance</b> proved to be too strict on inconsistencies between the data and thus could not determine the pattern accurately.
+                <br>
+                The <b>partial Hausdorff distance</b> was too lenient when identifiying the patterna and identified multiple patterns within one portion of the image.
+                <br>
+                The <b>average Hausdorff distance</b> proved to be the best metric as it was lenient with noisy data, but still managed to effectively identify the pattern.
+							
+              </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hausdorff/ckdtree.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+
+     <!-- Template Gen
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Matching Algorithm</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description"> 
+                There are three variations of the Hausdorff Distance found in literature. These methods are:<br>
+                <br><b>1. Modified Exact<br>2. Partial<br>3. Average</b>
+                <br><br>
+                They were all implemented within the experiement to asses viability. As the search for the nearest neighbour is a computaionally expensive calculation of 𝑂(𝑛2), a CKD-tree is used. This tree structure is a
+                binary tree that stores points in a multi dimensional space. When
+                searching for the nearest point, it recursively divides the space thus
+                reducing the search space by half each iteration. It can
+                effectively perform the nearest neighbour search with a query time
+                of 𝑂(𝑙𝑜𝑔(𝑛)). <br> <br>
+                The <b>modified exact Hausdorff distance</b> proved to be too strict on inconsistencies between the data and thus could not determine the pattern accurately.
+                <br>
+                The <b>partial Hausdorff distance</b> was too lenient when identifiying the patterna and identified multiple patterns within one portion of the image.
+                <br>
+                The <b>average Hausdorff distance</b> proved to be the best metric as it was lenient with noisy data, but still managed to effectively identify the pattern.
+							
+              </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hausdorff/ckdtree.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
 
 
 
