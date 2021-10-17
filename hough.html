@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Fiction Multipage Bootstrap Template</title>
+    <title>Template Matching</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -76,7 +76,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand logo" href="index.html">
-        <img src="images/logo-yellow.png" alt="">
+        <img src="images/tree-logo.png" alt="">
       </a>
     </div>
 
@@ -87,140 +87,366 @@
         <li><a href="template.html">Template Matching</a></li>
         <li><a href="hough.html">Hough Transform</a></li>
         <li><a href="hausdorff.html">Hausdorff Distance</a></li>
+        <!--<li><a href="contact.html">Contact</a></li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
 
-  <!-- Portfolio header-section 
+ <!-- Hero Area -section
   =========================-->
-<section class="page-header services-header" data-parallax="scroll" data-image-src="images/header/portfolio-folding-img.jpg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center">Our Portfolio.<br> We Ensure Quality Design.</h1>
+  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src="images/slider/orchard2.jpg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1> <br>
+            Hough Transform</h1>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
- <!-- Portfolio Sections 
- =========================-->
- <section class="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="title text-center">
-          <h2>Our Portfolio</h2>
+
+  <!-- Aims
+=========================-->
+<section class="clients" data-parallax="scroll" data-image-src="images/hough/tree3.jpg">
+  <div class="section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title text-center">
+            <h2>Project Aims</h2>
+          </div>
+          <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0 slider-main">
+            <div class="testimonial-slider">
+              <div class="item">
+                <!-- Slider item -->
+                <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
+                <div class="testimonials-area">
+                  <!-- <div class="round-shape"></div> -->
+                  <h5> Primary Aim:</h5> 
+                  <center><h5>To detect planting patterns from aerial footage of orchards using the Hough Transform</h5></center>
+                  <br>
+                  <br>
+                  <h5> Secondary Aims:</h5>
+                  <center><h5> Extract key parameters about the orchard such as orientation, intra-row, inter-row spacing and boundary points.</h5></center>
+                  
+                </div>
+                <!-- </div> -->
+                <!-- End Slider item -->
+              </div>
+                <!-- End Slider item -->
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="protfolio-mixitup-btn text-center">
-          <button class="filter btn btn-default btn-main active" data-filter="all">all</button>
-          <button class="filter btn btn-default btn-main" data-filter="category-1">branding</button>
-          <button class="filter btn btn-default btn-main" data-filter="category-2">User interface</button>
-          <button class="filter btn btn-default btn-main" data-filter="category-3">print design</button>
-        </div>
-        <div id="Container" class="filtr-container row">
-          <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-1">
-            <div class="portfolio-list">
-              <a href="portfolio-single.html">
-                <div class="th-mouse-portfolio-card">
-                  <div class="thumbnail portfolio-thumbnail">
-                    <img src="images/portfolio/portfolio-img1.jpg" alt="Portfolio">
-                    <div class="caption portfolio-caption">
-                      <p class="date">16.03.2015</p>
-                      <h3 class="portfolio-title">Merit wogmonk</h3>
-                      <p class="portfolio-subtitle">Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
+      </div><!-- /.End row -->
+    </div>
+  </div>
+  
+</section>
+ <!-- What is TM
+  =========================-->
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">What is the Hough Transform?</h2>
+    </div>
+    <!-- top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description">Template matching is the process of determining the presence and/or position of a smaller  image, called a template, in a larger image. In the case of planting patterns, they are made up of repeating geometric shapes such as squares and triangles. By creating a template of the geometric shapes we can use template matching to determine the planting pattern that is present in the dataset. <br> <br>
+					Template matching has 2 issues that must be overcome: rotation and scale. The template is only tested in the size and rotation that it is set to. The system must either detect the rotation of the dataset or test every rotation (which is extremely inefficient). To solve scale the templates must be sized to every scale that we want to test for so either we test detect a number of possible scales or test for every possible scale (inefficient). <br> <br>
+					This page will show you how we developed the system to maximise efficiency without compromising on the template matching approach.
+				 </p>
+             
+              <!-- View More Details -->
             </div>
           </div>
-          <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-2">
-            <div class="portfolio-list">
-              <a href="portfolio-single.html">
-                <div class="th-mouse-portfolio-card">
-                  <div class="thumbnail portfolio-thumbnail">
-                    <img src="images/portfolio/portfolio-img2.jpg" alt="Portfolio">
-                    <div class="caption portfolio-caption">
-                      <p class="date">16.03.2015</p>
-                      <h3 class="portfolio-title">Merit wogmonk</h3>
-                      <p class="portfolio-subtitle">Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-3">
-            <div class="portfolio-list">
-              <a href="portfolio-single.html">
-                <div class="th-mouse-portfolio-card">
-                  <div class="thumbnail portfolio-thumbnail">
-                    <img src="images/portfolio/portfolio-img3.jpg" alt="Portfolio">
-                    <div class="caption portfolio-caption">
-                      <p class="date">16.03.2015</p>
-                      <h3 class="portfolio-title">Merit wogmonk</h3>
-                      <p class="portfolio-subtitle">Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-1">
-            <div class="portfolio-list">
-              <a href="portfolio-single.html">
-                <div class="th-mouse-portfolio-card">
-                  <div class="thumbnail portfolio-thumbnail">
-                    <img src="images/portfolio/portfolio-img4.jpg" alt="Portfolio">
-                    <div class="caption portfolio-caption">
-                      <p class="date">16.03.2015</p>
-                      <h3 class="portfolio-title">Merit wogmonk</h3>
-                      <p class="portfolio-subtitle">Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-2">
-            <div class="portfolio-list">
-              <a href="portfolio-single.html">
-                <div class="th-mouse-portfolio-card">
-                  <div class="thumbnail portfolio-thumbnail">
-                    <img src="images/portfolio/portfolio-img5.jpg" alt="Portfolio">
-                    <div class="caption portfolio-caption">
-                      <p class="date">16.03.2015</p>
-                      <h3 class="portfolio-title">Merit wogmonk</h3>
-                      <p class="portfolio-subtitle">Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-3">
-            <div class="portfolio-list">
-              <a href="portfolio-single.html">
-                <div class="th-mouse-portfolio-card">
-                  <div class="thumbnail portfolio-thumbnail">
-                    <img src="images/portfolio/portfolio-img6.jpg" alt="Portfolio">
-                    <div class="caption portfolio-caption">
-                      <p class="date">16.03.2015</p>
-                      <h3 class="portfolio-title">Merit wogmonk</h3>
-                      <p class="portfolio-subtitle">Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hough/HTOverview.png" alt="">
             </div>
           </div>
         </div>
       </div>
     </div>
+   
+  </section>
+  
+  
+  <!-- Algorithm
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Algorithm</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description">
+				<br><br><br>
+				To create a system that can solve for both of the aims of the project, a 3 step system was determined. These steps set up the necessary information for the next step while balancing accuracy and efficiency.<br><br>
+				<br><b>Step 1</b><br> <br>
+				The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
+				<br><b>Step 2</b><br> <br>
+				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
+				<br><b>Step 3</b><br> <br>
+				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
+				 </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/TMFlow.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+  
+<!-- Row Detection / Parameter extraction
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Parameter Extraction</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description"> There were 7 parameters that the system attempted to extract: <br><br>
+										1) Intra-row spacing: with the use of KD Trees is was successfully extracted. <br><br>
+										2) Inter-row spacing: Through KD Trees and points that had lines perpendicular to the rotation it was successfully extracted but with some variance. <br><br>
+										3) Tree count: successfully extracted. <br><br>
+										4) Corner Tree coordinates: Successfully extracted using min, max x and y values. Does not would on orientations that are a multiple of 90. <br><br>
+										5) Road, ditch count: Failed to be detected. <br><br>
+										6) Average tree per row: Too much variance failed to be detected. <br><br>
+										7) Number of rows: Sometimes successful but very susceptible to noise, was not consistently detected and thus is considered to have failed.
+										 </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/ParamExt1.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="text-center">
+      <h2 class="title">Row Detection</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description">The system used row detection mainly to determine the rotation parameter for the template matching algorithm. There is an assumption that each dataset has straight lines which allows us to detect a single rotation. <br><br>
+									The algorithm iteratively built the row in one direction and then ran again to build it in the other direction. Using KD Trees it pick a point and its nearest neighbour and calculated the angle of the line between them. To build the row it took a KD tree of 5 levels (4 other points) and found which (if any) point creating a line will an angle similar to the angle of the row. If so then that point was added to the row and the process was repeated until that was no longer true. Lines are only considered if they have a minimum of 10 points in them. This allows for us to find noise in the initial guess and not have it affect the final results. Once 10 rows of more that 10 points is detected then it averages their angle to determine the rotation. <br><br>
+									You can see in the image where the red dots are lines detected by the algorithm. It does not detect full rows but it does detect enough rows with a length long enough to determine the rotation of the dataset.
+									</p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/RowDetection.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+  
+ <!-- Template Gen
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Template Generation</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description"> The system generates templates for each of the patterns that it is testing for: square, rectangle, triangle, hexagonal and double hedge row. <br><br>
+									A template is generated for each template according to each scale detected. The number of templates generated is O(n) for square and hexagonal and O(2n) for the other templates. This is because they take in two input of intra-row and inter-row spacing. This is limited in two ways, there is a maximum amount of scales that can be detected because scale detection is done by returning the most common scales. Secondly the program maintains efficiency even if every possible scale is detected because it breaks the image up into sub images. <br><br>
+
+									 </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/Templates.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+  
+ <!-- Scoring
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Scoring</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description"> There are two types of penalties in this system. If the spacing is different within and between rows by more than 1.5 times then the square and equilateral triangles are penalised; else it’s the rectangle and Isosceles that are penalised. <br><br>
+
+										If the average angle of closest points between rows is around 90 degrees the triangle templates are penalised. Else the square and rectangle templates are penalised.<br><br>
+
+										This is done so that the noise does not return false positives from the template matching. The spacing penalisation is fairly arbitrary, but it is necessary to have a cut off point else the rectangle and isosceles templates would not be able to be differentiated from the square and equilateral triangle templates. <br><br>
+
+										 </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/SqRect.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+  
+  
+  <!-- Problems
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Issues</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description">It was necessary to remove the quincunx template from the program because it always matches with square and rectangle patterns. Because of how the row detection algorithm works and how it orientates the image, the quincunx pattern template becomes a plus sign that matches extremely well with templates containing 90 degree angles. With the quincunx pattern always being detected and often outperforming the actual pattern present.
+						<br><br>
+						This is a problem that intensity based template matching has when determining details.
+
+						</p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/Quincunx.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+  
+   <!-- Conlcusion
+  =========================-->
+<section class="clients" data-parallax="scroll" data-image-src="images/slider/orchard2.jpg">
+  <div class="section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title text-center">
+            <h2>Conclusions</h2>
+          </div>
+          <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0 slider-main">
+            <div class="testimonial-slider">
+              <div class="item">
+                <!-- Slider item -->
+                <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
+                <div class="testimonials-area">
+                  <!-- <div class="round-shape"></div> -->
+				  <h5> Template matching was successful in determing the pattern present both in real world and idealised data. Provided the straight row assumptions are met.
+				  </h5>
+				  <br>
+				  <br>
+                  <h5> Template matching is a good approach to this problem both in terms of accuracy and effciency.
+				  </h5>
+				  <br>
+				  <br>
+				  <h5> One can implement more complex row detection techniques and improve of template matching to increase the accuracy of the solution especially with noise data
+				  </h5>
+                  
+                </div>
+                <!-- </div> -->
+                <!-- End Slider item -->
+              </div>
+                <!-- End Slider item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.End row -->
+    </div>
   </div>
-</section>
+  </section>
+  
+  
 
     <footer class="footer">
         <div class="container">
@@ -232,10 +458,22 @@
                             ========================== -->
                             <div class="footer-about">
                                 <h3 class="footer-title">About</h3>
-                                <p>Nemo enim ipsam voluptatem quia voluptas <br>
-                                    sit aspernatur aut odit aut fugit, sed quia <br>
-                                    magni dolores eos qui ratione. ed quia <br>
-                                    magni dolores</p>
+                                <p>A team of 3 honours students <br>
+                                    soving the problem of orchard structure <br>
+                                    classification for the company Aerobotics. <br>
+                                    Computer Science Honours 2021.</p>
+                            </div>
+                        </div>
+						<div class="col-md-4">
+                            <!-- footer Address section
+                            ========================== -->
+                            <div class="footer-address">
+                                <h3 class="footer-title">Developer</h3>
+                                <p>Template Matching solution developed by Jonathon Everatt.
+								<br>
+								https://github.com/KarmaZA
+								<br>
+								https://www.linkedin.com/in/jonathon-everatt-54049120a/</p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -243,47 +481,19 @@
                             ========================== -->
                             <div class="footer-address">
                                 <h3 class="footer-title">Address</h3>
-                                <p>DeviserWeb 24/A,Jalalabad amborkhana amagnina, Sylhet.</p>
-                                <p class="contact-address">
-                                    Contact us : <a href="tel:+610383666274">+61 (0) 3 8366 6274 </a> <br>
-                                    Write us : <a href="mailto:info@info.com">mail@itsnuman.com</a>
-                                </p>
+                                <p>Computer Science Department <br>
+									University of Cape Town <br>
+									Private Bag X3 <br>
+									Rondebosch</p>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <!-- footer Media link section
-                            ========================== -->
-                            <div class="footer-social-media">
-                                <h3 class="footer-title">Keep in touch</h3>
-                                <ul class="footer-media-link">
-                                    <li><a href="#"><i class="tf-ion-social-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-linkedin-outline"
-                                                aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-google-outline" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li><a href="#"><i class="tf-ion-social-instagram-outline"
-                                                aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-nav text-center">
-                        <div class="col-md-12">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="portfolio.html">Portfolio</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
                         </div>
                     </div>
                     <div class="text-center">
                         <div class="col-md-12">
                             <div class="copyright">
                                 <p>&copy; 2013-2017 All rights reserved. <br>
-                                    Design and Developed By <a href="https://themefisher.com">Themefisher.com</a></p>
+                                    Design and Developed By Jonathon Everatt. <br>
+									Template from https://themefisher.com</p>
                             </div>
                         </div>
                     </div>
