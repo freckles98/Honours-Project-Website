@@ -159,10 +159,11 @@
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description">Template matching is the process of determining the presence and/or position of a smaller  image, called a template, in a larger image. In the case of planting patterns, they are made up of repeating geometric shapes such as squares and triangles. By creating a template of the geometric shapes we can use template matching to determine the planting pattern that is present in the dataset. <br> <br>
-					Template matching has 2 issues that must be overcome: rotation and scale. The template is only tested in the size and rotation that it is set to. The system must either detect the rotation of the dataset or test every rotation (which is extremely inefficient). To solve scale the templates must be sized to every scale that we want to test for so either we test detect a number of possible scales or test for every possible scale (inefficient). <br> <br>
-					This page will show you how we developed the system to maximise efficiency without compromising on the template matching approach.
-				 </p>
+              <p class="case-description"> The Hough Transform is an image processing technique that can be ued for the detection of lines in digital images. One of the main features of this process, is its ability to detect a line, regardless of how fragmented it is. <br> <br>
+              The HT method follows three main steps: <br><br> 
+              Firstly, the coordinates of a pixel in the cartesian image space is transformed into a sinusoidal curve in the parameter space. Secondly, an accumulator with a cell array (which is equal to the size of the unknown dimensions) is laid on the parameter space and each pixel adds one vote to the cells lying on its sinusoidal curve. Thirdly, cells with global or local maximum votes are selected and the parameter coordinates (rho, theta) can be used to determine the line as well as its orientation in the cartesian space <br> <br>
+              This technique is applied in order to identify the primary and secondary aims.
+            </p>
              
               <!-- View More Details -->
             </div>
