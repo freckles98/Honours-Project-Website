@@ -149,7 +149,7 @@
 
   <section class="case-study">
     <div class="text-center">
-      <h2 class="title">What is the Hausdorff Distance</h2>
+      <h2 class="title">What is the Hausdorff Distance?</h2>
     </div>
     <!-- Case Study Description
       top section -->
@@ -215,15 +215,31 @@
             <div class="content">
               
               <p class="case-description">
-				<br><br><br>
-				To create a system that can solve for both of the aims of the project, a 3 step system was determined. These steps set up the necessary information for the next step while balancing accuracy and efficiency.<br><br>
-				<br><b>Step 1</b><br> <br>
-				The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
-				<br><b>Step 2</b><br> <br>
-				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
-				<br><b>Step 3</b><br> <br>
-				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
-				 </p>
+				
+				To implement the algorithm the following steps were taken:<br><br>
+				<br><b>Step 1</b><br> 
+        Creating model sets of of the patterns needing to be indentified. There were square, rectangle, quincunx, double row and heaxagonal.
+				<br>
+				<br><b>Step 2</b><br> 
+        Using the polygon centroids as point and translating and rotating this on to an effective coordinate reference system.
+				<br>
+				<br><b>Step 3</b><br> 
+        Determining the density of the data and scaling effectively to ensure 1 by 1 unit average between trees.
+        <br>
+
+        <br><b>Step 4</b><br> 
+        Choosing the Hausdorff distance to be tested. There were three options: Modified Exact, Partial and Average Hausdorff Distance.
+				<br>
+        <br><b>Step 5</b><br> 
+        Running the matching algorithm that performs rotations and translations of the model to effectively match it to the data.
+				<br>
+        <br><b>Step 6</b><br> 
+        Repeating step 5 through the data set to find the pattern with the lowest Hausdorff Distance and thus the identified pattern.
+				<br>
+        
+      
+      
+      </p>
              
               <!-- View More Details -->
               
@@ -231,10 +247,16 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/Template/TMFlow.jpg" alt="">
+              <img class="img-responsive" src="images/hausdorff/process.png" alt="">
+            </div>
+            <br>
+            <div class="img-content">
+              <img class="img-responsive" src="images/hausdorff/extraction.png" alt="">
             </div>
           </div>
         </div>
+
+        
       </div>
     </div>
    
