@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="images/tree-logo.png">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -95,7 +95,7 @@
 
  <!-- Hero Area -section
   =========================-->
-  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src="images/slider/orchard2.jpg">
+  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src="images/hausdorff/orchard2.jpg">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -283,7 +283,7 @@
                 There are three variations of the Hausdorff Distance found in literature. These methods are:<br>
                 <br><b>1. Modified Exact<br>2. Partial<br>3. Average</b>
                 <br><br>
-                They were all implemented within the experiement to asses viability. As the search for the nearest neighbour is a computaionally expensive calculation of 𝑂(𝑛2), a CKD-tree is used. This tree structure is a
+                They were all implemented within the experiement to asses viability. As the search for the nearest neighbour is a computaionally expensive calculation of 𝑂(𝑛^2), a CKD-tree is used. This tree structure is a
                 binary tree that stores points in a multi dimensional space. When
                 searching for the nearest point, it recursively divides the space thus
                 reducing the search space by half each iteration. It can
@@ -329,21 +329,45 @@
             <div class="content">
               
               <p class="case-description"> 
-                There are three variations of the Hausdorff Distance found in literature. These methods are:<br>
-                <br><b>1. Modified Exact<br>2. Partial<br>3. Average</b>
-                <br><br>
-                They were all implemented within the experiement to asses viability. As the search for the nearest neighbour is a computaionally expensive calculation of 𝑂(𝑛2), a CKD-tree is used. This tree structure is a
-                binary tree that stores points in a multi dimensional space. When
-                searching for the nearest point, it recursively divides the space thus
-                reducing the search space by half each iteration. It can
-                effectively perform the nearest neighbour search with a query time
-                of 𝑂(𝑙𝑜𝑔(𝑛)). <br> <br>
-                The <b>modified exact Hausdorff distance</b> proved to be too strict on inconsistencies between the data and thus could not determine the pattern accurately.
+                When matching the model to the data it is unlikely that they will line up correctly, thus we implement a matching algorithm to effectively find the correct matches and thus reduce the Hausdorff distance. The model is translated through a small portion of the data in 1 by 1 units for the square, hexagonal and quincunx shape and 1 by 2 units for the rectangle and double row shape. This reduces computational complexity as the uniform allows for this.
                 <br>
-                The <b>partial Hausdorff distance</b> was too lenient when identifiying the patterna and identified multiple patterns within one portion of the image.
-                <br>
-                The <b>average Hausdorff distance</b> proved to be the best metric as it was lenient with noisy data, but still managed to effectively identify the pattern.
-							
+                The next issue to consider is rotations. The data not necessarily going to be aligned in the correct formation. Thus each shape needs to be rotated within each increment, thus adding additional computational complexity. In attempt to reduce this, a least squares regression line is used to correctly align the data. However, this did not work correctly and future works may want to look at the Hough transform to achieve this.
+
+              </p>
+             
+              <!-- View More Details -->
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hausdorff/matching.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+
+       <!-- Template Gen
+  =========================-->
+
+  <section class="case-study">
+    <div class="text-center">
+      <h2 class="title">Findings</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              
+              <p class="case-description"> 
+                TO DO
               </p>
              
               <!-- View More Details -->
@@ -374,21 +398,9 @@
                             <div class="footer-about">
                                 <h3 class="footer-title">About</h3>
                                 <p>A team of 3 honours students <br>
-                                    solving the problem of orchard structure <br>
+                                    soving the problem of orchard structure <br>
                                     classification for the company Aerobotics. <br>
                                     Computer Science Honours 2021.</p>
-                            </div>
-                        </div>
-						<div class="col-md-4">
-                            <!-- footer Address section
-                            ========================== -->
-                            <div class="footer-address">
-                                <h3 class="footer-title">Developer</h3>
-                                <p>
-								<br>
-								
-								<br>
-							  </p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -397,19 +409,35 @@
                             <div class="footer-address">
                                 <h3 class="footer-title">Address</h3>
                                 <p>Computer Science Department <br>
-									University of Cape Town <br>
-									Private Bag X3 <br>
-									Rondebosch</p>
+				University of Cape Town <br>
+				Private Bag X3 <br>
+				Rondebosch</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- footer Media link section
+                            ========================== -->
+                            <div class="footer-social-media">
+                                <h3 class="footer-title">Keep in touch</h3>
+                                <ul class="footer-media-link">
+                                    <li><a href="#"><i class="tf-ion-social-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="tf-ion-social-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="tf-ion-social-linkedin-outline"
+                                                aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="tf-ion-social-google-outline" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="tf-ion-social-instagram-outline"
+                                                aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                   
                     <div class="text-center">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Computer Science Honours 2021 <br>
-										Web page by: Jonathon Everatt, Piero Puccini, Chelsea van Coller</p>
                                 <p>&copy; 2013-2017 All rights reserved. <br>
-                                    Template Design and Developed By https://themefisher.com</p>
+                                    Design and Developed By <a href="https://themefisher.com">Themefisher.com</a></p>
                             </div>
                         </div>
                     </div>
