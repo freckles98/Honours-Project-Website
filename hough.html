@@ -170,7 +170,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/hough/HTOverview.png" alt="">  <i><caption>This is a caption</caption></i>
+              <img class="img-responsive" src="images/hough/HTOverview.png" alt="">  <i><caption></caption></i>
             </div>
           </div>
         </div>
@@ -222,11 +222,11 @@
             <br></br><br>
             <div class="img-content">
               <img class="img-responsive" style = "max-width:30%" src="images/hough/Centroids.png" alt="">
-              <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Subsection of Tree Centroids</div></i>
+              <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Subsection of Tree Centroids</div></i>
             </div>
             <div class="img-content">
               <img class="img-responsive" style = "max-width:30%" src="images/hough/EdgeDet.png" alt="">
-              <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Edge Map of Centroids</div></i>
+              <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Edge Map of Centroids</div></i>
             </div>
             <div class="img-content">
               <img class="img-responsive" style = "max-width:35%" src="images/hough/Pixel_Reduct.png" alt="">
@@ -256,16 +256,16 @@
             <div class="content">
               
               <p class="case-description"> After the data is pre-processed, the HT can be applied and the 
-                results to extract the main and secondary directions needed to identify a planting pattern.
-                Post-processing is applied to both directions in order to reduce false positive row detection 
-                as well as to extract secondary aims. 
+                results from this process are then used in the post-processing step to extract the main and secondary directions needed to identify the planting pattern.
+                as well as secondary aims.
+                
                  <br><br>
                  <b>Step 1: HT Application to find Orientation </b><br><br>
                    The Hough transform is used at increasing threshold values in order to obtain
                    the main orientation of the orchard structure, represented by the theta value. This is further used to extract the 
                    secondary orientation of the orchard which is at 90 degrees to the main orientation   
                   <br><br>
-               <br><b>Step 2: HT applied at lower thresholds</b><br> <br>
+               <br><b>Step 2: HT applied at low and high thresholds</b><br> <br>
                The theta values for the main and secondary orientation are used to extract the 
                rho values which represent the actual rows within the orchard structure for each direction. 
                <br><br>
@@ -343,18 +343,18 @@
               <img class="img-responsive" src="images/hough/Filtered.png" alt="">
             </div>
           </div>
-          <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Effect of Line Filtering to Reduce False Positives </div></i>
+          <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Effect of Line Filtering to Reduce False Positives </div></i>
           <div class="col-md-6">
             <div class="img-content">
               <img class="img-responsive" style = "max-width:30%" src="images/hough/HT_Cart.png" alt="">
             </div>
-            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Converting from Hough Space into Cartesian Coordinates </div></i>
+            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Converting from Hough Space into Cartesian Coordinates </div></i>
           </div>
           <div class="col-md-6">
             <div class="img-content">
               <img class="img-responsive" style = "max-width:30%" src="images/hough/Corner.png" alt="">
             </div>
-            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;Identifying Corner Positions using intercpet of Main and Secondary Directions </div></i>
+            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;Identifying Corner Positions using intercpet of Main and Secondary Directions </div></i>
           </div>
         </div>
       </div>
@@ -401,28 +401,30 @@
           </div>
           <div class="col-md-3">
             <div class="img-content">
-              <img class="img-responsive" src="images/hough/EdgeExtraLine.png" alt="">
+              <img class="img-responsive" style = "max-width:65%" src="images/hough/EdgeExtraLine.png" alt="">
             </div>
           </div>
           <div class="col-md-3">
             <div class="img-content">
-              <img class="img-responsive" src="images/hough/ExtraLine.png" alt="">
+              <img class="img-responsive" style = "max-width:65%" src="images/hough/ExtraLine.png" alt="">
             </div>
           </div>
-          <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Multiple rows still detected post filtering </div></i>
+          <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;Sporadic placing of centroids leading to False Positive row identification </div></i>
           <div class="col-md-3">
             <div class="img-content">
-              <img class="img-responsive" src="images/hough/EdgeExtraLine.png" alt="">
+              <img class="img-responsive" style = "max-width:65%" src="images/hough/Picture_2.png" alt="">
             </div>
           </div>
           <div class="col-md-3">
             <div class="img-content">
-              <img class="img-responsive" src="images/hough/ExtraLine.png" alt="">
+              <img class="img-responsive" style = "max-width:65%" src="images/hough/Picture_1.png" alt="">
             </div>
-            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Multiple rows still detected post filtering </div></i>
-  
           </div>
+          <div class = "col-md-6">
+          <i><div class="caption" col =6>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Ground Noise Resulting in False Positive lines being identified</div></i>
+          </div>  
         </div>
+        
       </div>
     </div>
    
@@ -499,7 +501,7 @@
                             ========================== -->
                             <div class="footer-address">
                                 <h3 class="footer-title">Developer</h3>
-                                <p>
+                                <p> The Hough Transform was investigated to be used for Pattern Classification by Piero Puccini
 								<br>
 								
 								<br>
@@ -521,7 +523,7 @@
                     <div class="text-center">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>&copy; 2013-2017 All rights reserved. <br>
+                                <p>&copy; 2013-2021 All rights reserved. <br>
                                     
 									Template from https://themefisher.com</p>
                             </div>
