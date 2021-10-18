@@ -170,7 +170,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/hough/HTOverview.png" alt="">  <i><caption>This is a</caption></i>
+              <img class="img-responsive" src="images/hough/HTOverview.png" alt="">  <i><caption>This is a caption</caption></i>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
 
   <section class="case-study">
     <div class="text-center">
-      <h2 class="title">Algorithm</h2>
+      <h2 class="title">Pre-Processing</h2>
     </div>
     <!-- Case Study Description
       top section -->
@@ -198,29 +198,19 @@
               
               <p class="case-description">
 				<br><br><br>
-				The process of investigating the use of the HT to find the primary and secondary aims was 
-        applied to idealized and real data in three steps:<br><br>
-				<br><b>Step 1: Pre-processing</b><br> <br>
-				 Centroid information of orchard trees calculated from geojson file of
-         polygon location information at different confidence levels is plotted.
-         This plotted information is saved as an image, where a canny edge detector is applied.
-         Pixel reduction is then applied to the edge image to increase accuracy when the HT 
-         is applied.
+				Before the Hough Transform can be applied, input data is pre-processed which was done in the following steps:<br><br>
+				<br><b>Step 1: Finding Tree Centroids</b><br> <br>
+          Centroids are found from the GeoJson data containing polygon information of tree locations at different
+          confidence levels. This information is plotted and saved as an image file.     
            <br><br>
-				<br><b>Step 2: Applying the HT</b><br> <br>
-				Initially applying the python cv library HT at different threshold levels in order to  
-        find the main orientation represented by theta. This was then used to identify the secondary direction of
-        rows. The HT was then applied at both lower and higher threshold levels, with rho values associated to the theta 
-        angle of the main and secondary direction obtained.
+				<br><b>Step 2: Edge Detectioin</b><br> <br>
+				The Hough Transform takes an edge map of the plotted data as input. In order to achieve this,
+        a Canny Edge Detector is used, which identifies the edges of the centroids within the image.
         <br><br>
-				<br><b>Step 3: Post-processing</b><br> <br>
-				Post processing is applied to the resulting rho values that indicate rows within an
-        each of the main and secondary directions. Line filtering is applied to remove false 
-        positive rows that are detected. The rho and theta information is then transformed back
-        into the cartisian space and an euclidean distance formula is applied to retrieve
-        secondary parameters, such as inter and intra row spacing. Corner point  locations are
-        identified by looking at the intercepts of the outer rows in both the main and secondary
-        directions. 
+				<br><b>Step 3: Pixel Reduction</b><br> <br>
+				Application of the Canny Edge detector results in an edge map where each tree centroid
+        is represented by multiple pixels. To increase accuracy of the Hough Transform, these pixel
+        centroids are reduced to single pixels. 
         <br><br>
 				 </p>
              
@@ -229,8 +219,18 @@
             </div>
           </div>
           <div class="col-md-6">
+            <br></br><br>
             <div class="img-content">
-              <img class="img-responsive" src="images/Template/TMFlow.jpg" alt="">
+              <img class="img-responsive" style = "max-width:30%" src="images/hough/Centroids.png" alt="">
+              <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Subsection of Tree Centroids</div></i>
+            </div>
+            <div class="img-content">
+              <img class="img-responsive" style = "max-width:30%" src="images/hough/EdgeDet.png" alt="">
+              <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Edge Map of Centroids</div></i>
+            </div>
+            <div class="img-content">
+              <img class="img-responsive" style = "max-width:35%" src="images/hough/Pixel_Reduct.png" alt="">
+              <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Pixel Reduction to increase accuracy</div></i>
             </div>
           </div>
         </div>
@@ -244,41 +244,53 @@
 
   <section class="case-study">
     <div class="text-center">
-      <h2 class="title">Parameter Extraction</h2>
+      <h2 class="title">Hough Transform Application</h2>
     </div>
     <!-- Case Study Description
       top section -->
     <div class="case-study-content">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description"> There were 7 parameters that the system attempted to extract: <br><br>
-										1) Intra-row spacing: with the use of KD Trees is was successfully extracted. <br><br>
-										2) Inter-row spacing: Through KD Trees and points that had lines perpendicular to the rotation it was successfully extracted but with some variance. <br><br>
-										3) Tree count: successfully extracted. <br><br>
-										4) Corner Tree coordinates: Successfully extracted using min, max x and y values. Does not would on orientations that are a multiple of 90. <br><br>
-										5) Road, ditch count: Failed to be detected. <br><br>
-										6) Average tree per row: Too much variance failed to be detected. <br><br>
-										7) Number of rows: Sometimes successful but very susceptible to noise, was not consistently detected and thus is considered to have failed.
+              <p class="case-description"> After the data is pre-processed, the HT can be applied and the 
+                results to extract the main and secondary directions needed to identify a planting pattern.
+                Post-processing is applied to both directions in order to reduce false positive row detection 
+                as well as to extract secondary aims. 
+                 <br><br>
+                 <b>Step 1: HT Application to find Orientation </b><br><br>
+                   The Hough transform is used at increasing threshold values in order to obtain
+                   the main orientation of the orchard structure, represented by the theta value. This is further used to extract the 
+                   secondary orientation of the orchard which is at 90 degrees to the main orientation   
+                  <br><br>
+               <br><b>Step 2: HT applied at lower thresholds</b><br> <br>
+               The theta values for the main and secondary orientation are used to extract the 
+               rho values which represent the actual rows within the orchard structure for each direction. 
+               <br><br>
+               
+               The application of the HT results in multiple rho values being determined for each of
+               the main and secondary direction. These values need to be post-processed in order
+               to identify the correct rows within the orchard structure and extract secondary aims.
+               
+               
 										 </p>
              
               <!-- View More Details -->
               
             </div>
           </div>
-          <div class="col-md-6">
+          <!-- <div class="col-md-6">
             <div class="img-content">
               <img class="img-responsive" src="images/Template/ParamExt1.jpg" alt="">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
 	<div class="text-center">
-      <h2 class="title">Row Detection</h2>
+      <h2 class="title">Post-Processing</h2>
     </div>
     <!-- Case Study Description
       top section -->
@@ -289,19 +301,60 @@
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description">The system used row detection mainly to determine the rotation parameter for the template matching algorithm. There is an assumption that each dataset has straight lines which allows us to detect a single rotation. <br><br>
-									The algorithm iteratively built the row in one direction and then ran again to build it in the other direction. Using KD Trees it pick a point and its nearest neighbour and calculated the angle of the line between them. To build the row it took a KD tree of 5 levels (4 other points) and found which (if any) point creating a line will an angle similar to the angle of the row. If so then that point was added to the row and the process was repeated until that was no longer true. Lines are only considered if they have a minimum of 10 points in them. This allows for us to find noise in the initial guess and not have it affect the final results. Once 10 rows of more that 10 points is detected then it averages their angle to determine the rotation. <br><br>
-									You can see in the image where the red dots are lines detected by the algorithm. It does not detect full rows but it does detect enough rows with a length long enough to determine the rotation of the dataset.
-									</p>
+              <p class="case-description"> Output from the HT contains excess information 
+                that needs to be reduced so only the correct information about the rows in the 
+                orchard structure is kept.
+                 <br><br>
+                 <b>Step 1: Line Filtering</b><br><br>
+                   Due to centroid variations within rows leading to multiple lines representing the 
+                   same row in an orchard, line filtering is used to combine these into single orchard rows. 
+                   This is based on a margin of error between HT output rho values.
+                   false positive row identification    
+                  <br><br>
+               <br><b>Step 2: Conversion from Hough Space to Cartisian Space</b><br> <br>
+               Filtered rows represented in Hough space as Rho and Theta values are converted into 
+               cartisian (x,y) coordinates so distance measures can be applied in order to classify 
+               planting patterns and identify secondary parameters.
+               <br><br>
+               <br><b>Step 3: Pattern Classification and Parameter Extraction</b><br> <br>
+               Distances between rows are calculated using a Euclidean distance measure. This is done in both 
+               the main and secondary orientation in order to extract inter and intra row spacing. These distances 
+               are analysed in order to classify each direction into the correct planting pattern.
+               <br><br>
+               <br><b>Step 4: Intercepts used for corner point identification</b><br> <br>
+               The intercept points of the outside rows of both directions are used in order to identify the 
+               corner points of the orchard structure. The surrounding area around these points 
+               are searched to match pixels in that location. 
+               
+               
+										 </p>
              
               <!-- View More Details -->
               
             </div>
           </div>
+          <div class="col-md-3">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hough/PreFilter.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hough/Filtered.png" alt="">
+            </div>
+          </div>
+          <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Effect of Line Filtering to Reduce False Positives </div></i>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/Template/RowDetection.png" alt="">
+              <img class="img-responsive" style = "max-width:30%" src="images/hough/HT_Cart.png" alt="">
             </div>
+            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Converting from Hough Space into Cartesian Coordinates </div></i>
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" style = "max-width:30%" src="images/hough/Corner.png" alt="">
+            </div>
+            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;Identifying Corner Positions using intercpet of Main and Secondary Directions </div></i>
           </div>
         </div>
       </div>
@@ -314,7 +367,7 @@
 
   <section class="case-study">
     <div class="text-center">
-      <h2 class="title">Template Generation</h2>
+      <h2 class="title">Results</h2>
     </div>
     <!-- Case Study Description
       top section -->
@@ -325,19 +378,49 @@
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description"> The system generates templates for each of the patterns that it is testing for: square, rectangle, triangle, hexagonal and double hedge row. <br><br>
-									A template is generated for each template according to each scale detected. The number of templates generated is O(n) for square and hexagonal and O(2n) for the other templates. This is because they take in two input of intra-row and inter-row spacing. This is limited in two ways, there is a maximum amount of scales that can be detected because scale detection is done by returning the most common scales. Secondly the program maintains efficiency even if every possible scale is detected because it breaks the image up into sub images. <br><br>
-
-									 </p>
+              <p class="case-description"> Primary and secondary aims were attainable from idealized
+                data. However, when applied to Real data sets the variation of centroid location information,
+                especially for the secondary direction led to orchard rows not being identified correctly.
+                This had the result of poor pattern classification due to incorrect rows being located.  <br><br>
+								
+                Application of a HT threshold value that was too high led to rows represented by
+                fewer points not being identified. When the HT threshold is too high, single rows
+                are identified multiple times even after line filtering is applied.  <br><br>
+                 
+                 Ground noise at lower confidence levels led to excess rows being identified, resulting in poor
+                 pattern classification <br><br>
+                 
+                 Missing corner centroids at higher confidence levels led to difficulties in 
+                 identifying corner positions as intercepts of outside rows cannot be matched to 
+                 pixels at these positions<br><br>	
+                </p>
              
               <!-- View More Details -->
               
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-3">
             <div class="img-content">
-              <img class="img-responsive" src="images/Template/Templates.jpg" alt="">
+              <img class="img-responsive" src="images/hough/EdgeExtraLine.png" alt="">
             </div>
+          </div>
+          <div class="col-md-3">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hough/ExtraLine.png" alt="">
+            </div>
+          </div>
+          <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Multiple rows still detected post filtering </div></i>
+          <div class="col-md-3">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hough/EdgeExtraLine.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="img-content">
+              <img class="img-responsive" src="images/hough/ExtraLine.png" alt="">
+            </div>
+            <i><div class="caption">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Multiple rows still detected post filtering </div></i>
+  
           </div>
         </div>
       </div>
@@ -345,82 +428,6 @@
    
   </section>
   
- <!-- Scoring
-  =========================-->
-
-  <section class="case-study">
-    <div class="text-center">
-      <h2 class="title">Scoring</h2>
-    </div>
-    <!-- Case Study Description
-      top section -->
-    <div class="case-study-content">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <!-- inner sub-title -->
-            <div class="content">
-              
-              <p class="case-description"> There are two types of penalties in this system. If the spacing is different within and between rows by more than 1.5 times then the square and equilateral triangles are penalised; else it’s the rectangle and Isosceles that are penalised. <br><br>
-
-										If the average angle of closest points between rows is around 90 degrees the triangle templates are penalised. Else the square and rectangle templates are penalised.<br><br>
-
-										This is done so that the noise does not return false positives from the template matching. The spacing penalisation is fairly arbitrary, but it is necessary to have a cut off point else the rectangle and isosceles templates would not be able to be differentiated from the square and equilateral triangle templates. <br><br>
-
-										 </p>
-             
-              <!-- View More Details -->
-              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-content">
-              <img class="img-responsive" src="images/Template/SqRect.jpg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   
-  </section>
-  
-  
-  <!-- Problems
-  =========================-->
-
-  <section class="case-study">
-    <div class="text-center">
-      <h2 class="title">Issues</h2>
-    </div>
-    <!-- Case Study Description
-      top section -->
-    <div class="case-study-content">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <!-- inner sub-title -->
-            <div class="content">
-              
-              <p class="case-description">It was necessary to remove the quincunx template from the program because it always matches with square and rectangle patterns. Because of how the row detection algorithm works and how it orientates the image, the quincunx pattern template becomes a plus sign that matches extremely well with templates containing 90 degree angles. With the quincunx pattern always being detected and often outperforming the actual pattern present.
-						<br><br>
-						This is a problem that intensity based template matching has when determining details.
-
-						</p>
-             
-              <!-- View More Details -->
-              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-content">
-              <img class="img-responsive" src="images/Template/Quincunx.jpg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   
-  </section>
   
    <!-- Conlcusion
   =========================-->
@@ -439,15 +446,20 @@
                 <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
                 <div class="testimonials-area">
                   <!-- <div class="round-shape"></div> -->
-				  <h5> Template matching was successful in determing the pattern present both in real world and idealised data. Provided the straight row assumptions are met.
+				  <h5> The Hough Transform was successful in identifying primary and secondary aims for idealized
+            data. It did however fall short when applied to real data sets, mainly due to centroid alignment 
+            variation of either the main or secondary planting direction.
 				  </h5>
 				  <br>
 				  <br>
-                  <h5> Template matching is a good approach to this problem both in terms of accuracy and effciency.
+                  <h5> Selection of the correct HT threshold value was dependent on the dataset. If this was too
+                    high, then not all the rows were detected. If this was too low, multiple false positive
+                    lines were identified. 
 				  </h5>
 				  <br>
 				  <br>
-				  <h5> One can implement more complex row detection techniques and improve of template matching to increase the accuracy of the solution especially with noise data
+				  <h5> The application of the HT was good at identifying the orchard orientation and
+            could be used as a pre-processing step in Template Matching techniques.
 				  </h5>
                   
                 </div>
