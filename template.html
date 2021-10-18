@@ -159,7 +159,7 @@
             <div class="content">
               
               <p class="case-description">Template matching is the process of determining the presence and/or position of a smaller  image, called a template, in a larger image. In the case of planting patterns, they are made up of repeating geometric shapes such as squares and triangles. By creating a template of the geometric shapes we can use template matching to determine the planting pattern that is present in the dataset. <br> <br>
-					Template matching has 2 issues that must be overcome: rotation and scale. The template is only tested in the size and rotation that it is set to. The system must either detect the rotation of the dataset or test every rotation (which is extremely inefficient). To solve scale the templates must be sized to every scale that we want to test for so either we test detect a number of possible scales or test for every possible scale (inefficient). <br> <br>
+					Template matching has 2 issues that must be overcome: rotation and scale. The template is only tested in the size and rotation that it is set to. The system must either detect the rotation of the dataset or test every rotation (which is extremely inefficient). To solve scale the templates must be sized to every scale that we want to test for, so either we detect several possible scales present in the data or test for every possible scale(naive inefficient). <br> <br>
 					This page will show you how we developed the system to maximise efficiency without compromising on the template matching approach.
 				 </p>
              
@@ -242,7 +242,7 @@
 										1) Intra-row spacing: with the use of KD Trees is was successfully extracted. <br><br>
 										2) Inter-row spacing: Through KD Trees and points that had lines perpendicular to the rotation it was successfully extracted but with some variance. <br><br>
 										3) Tree count: successfully extracted. <br><br>
-										4) Corner Tree coordinates: Successfully extracted using min, max x and y values. Does not would on orientations that are a multiple of 90. <br><br>
+										4) Corner Tree coordinates: Successfully extracted using min, max x and y values. Does not work on orientations that are a multiple of 90. <br><br>
 										5) Road, ditch count: Failed to be detected. <br><br>
 										6) Average tree per row: Too much variance failed to be detected. <br><br>
 										7) Number of rows: Sometimes successful but very susceptible to noise, was not consistently detected and thus is considered to have failed.
@@ -279,7 +279,7 @@
             <div class="content">
               
               <p class="case-description">The system used row detection mainly to determine the rotation parameter for the template matching algorithm. There is an assumption that each dataset has straight lines which allows us to detect a single rotation. <br><br>
-									The algorithm iteratively built the row in one direction and then ran again to build it in the other direction. Using KD Trees it pick a point and its nearest neighbour and calculated the angle of the line between them. To build the row it took a KD tree of 5 levels (4 other points) and found which (if any) point creating a line will an angle similar to the angle of the row. If so then that point was added to the row and the process was repeated until that was no longer true. Lines are only considered if they have a minimum of 10 points in them. This allows for us to find noise in the initial guess and not have it affect the final results. Once 10 rows of more that 10 points is detected then it averages their angle to determine the rotation. <br><br>
+									The algorithm iteratively built the row in one direction and then ran again to build it in the other direction. Using KD Trees it pick a point and its nearest neighbour and calculated the angle of the line between them. To build the row it took a KD tree of 5 levels (4 other points) and found which (if any) point creating a line with an angle similar to the angle of the row. If so then that point was added to the row and the process was repeated until that was no longer true. Lines are only considered if they have a minimum of 10 points in them. This allows for us to find noise in the initial guess and not have it affect the final results. Once 10 rows of more that 10 points is detected then it averages their angle to determine the rotation. <br><br>
 									You can see in the image where the red dots are lines detected by the algorithm. It does not detect full rows but it does detect enough rows with a length long enough to determine the rotation of the dataset.
 									</p>
              
@@ -355,7 +355,7 @@
               
               <p class="case-description"> There are two types of penalties in this system; Spacing and angle penalties. If the inter-row spacing is more than 1.5 times the intra-row spacing the square and equilateral triangles are penalised, because these template wouldn’t fit. Vice versa, the same is applied to the rectangle and isosceles template is it is less than 1.5 times. <br><br>
 
-										If the average angle of closest points between rows is around 90 degrees the triangle templates are penalised, because for these templates it should be around 60 degrees. And likewise for the rectangle and square template if the  angle is around 60 degrees. <br><br>
+										If the average angle of closest points between rows is around 90 degrees the triangle templates are penalised, because for these(triangle) templates it should be around 60 degrees. And likewise for the rectangle and square template if the  angle is around 60 degrees. <br><br>
 
 										This is done so that the noise does not return false positives from the template matching. The spacing penalisation is fairly arbitrary, but it is necessary to have a cut off point else the rectangle and isosceles templates would not be able to be differentiated from the square and equilateral triangle templates. <br><br>
 
@@ -497,9 +497,10 @@
                     <div class="text-center">
                         <div class="col-md-12">
                             <div class="copyright">
+                                <p>Computer Science Honours 2021 <br>
+										Web page by: Jonathon Everatt, Piero Puccini, Chelsea van Coller</p>
                                 <p>&copy; 2013-2017 All rights reserved. <br>
-                                    Design and Developed By Jonathon Everatt. <br>
-									Template from https://themefisher.com</p>
+                                    Template Design and Developed By https://themefisher.com</p>
                             </div>
                         </div>
                     </div>
