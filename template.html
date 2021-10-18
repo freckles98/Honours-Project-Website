@@ -124,7 +124,7 @@
                 <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
                 <div class="testimonials-area">
                   <!-- <div class="round-shape"></div> -->
-                  <h5> Primary aim: To detect planting patterns from aerial footage of orchards using template matching techniques</h5>
+                  <h5> Primary aim: To detect planting patterns from aerial footage of orchards using template matching techniques.</h5>
                   <br>
                   <br>
                   <h5> Secondary Aim: Extract key parameters about the orchard such as intra-row and inter-row spacing.
@@ -190,7 +190,13 @@
     <div class="case-study-content">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+		<div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/TMFlow.jpg" alt="">
+            </div>
+          </div>
+          
+		  <div class="col-md-6">
             <!-- inner sub-title -->
             <div class="content">
               
@@ -209,11 +215,7 @@
               
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="img-content">
-              <img class="img-responsive" src="images/Template/TMFlow.jpg" alt="">
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -266,6 +268,12 @@
     <div class="case-study-content">
       <div class="container">
         <div class="row">
+		<div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/RowDetection.png" alt="">
+            </div>
+          </div>
+		  
           <div class="col-md-6">
             <!-- inner sub-title -->
             <div class="content">
@@ -279,11 +287,7 @@
               
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="img-content">
-              <img class="img-responsive" src="images/Template/RowDetection.png" alt="">
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -307,9 +311,10 @@
             <div class="content">
               
               <p class="case-description"> The system generates templates for each of the patterns that it is testing for: square, rectangle, triangle, hexagonal and double hedge row. <br><br>
-									A template is generated for each template according to each scale detected. The number of templates generated is O(n) for square and hexagonal and O(2n) for the other templates. This is because they take in two input of intra-row and inter-row spacing. This is limited in two ways, there is a maximum amount of scales that can be detected because scale detection is done by returning the most common scales. Secondly the program maintains efficiency even if every possible scale is detected because it breaks the image up into sub images. <br><br>
+									A template is generated for each template according to each scale detected. The number of templates generated is O(n) for square and hexagonal and O(2n) for the other templates. This is because they take in two inputs of intra-row and inter-row spacing. The number of generated templates is limited in two ways, there is a maximum amount of scales that can be detected because scale detection is done by returning the most common scales. Secondly the program maintains efficiency even if every possible scale is detected because it breaks the image up into sub images. <br><br>
 
 									 </p>
+
              
               <!-- View More Details -->
               
@@ -338,27 +343,30 @@
     <div class="case-study-content">
       <div class="container">
         <div class="row">
+		<div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="images/Template/SqRect.jpg" alt="">
+            </div>
+          </div>
+		  
           <div class="col-md-6">
             <!-- inner sub-title -->
             <div class="content">
               
-              <p class="case-description"> There are two types of penalties in this system. If the spacing is different within and between rows by more than 1.5 times then the square and equilateral triangles are penalised; else it’s the rectangle and Isosceles that are penalised. <br><br>
+              <p class="case-description"> There are two types of penalties in this system; Spacing and angle penalties. If the inter-row spacing is more than 1.5 times the intra-row spacing the square and equilateral triangles are penalised, because these template wouldn’t fit. Vice versa, the same is applied to the rectangle and isosceles template is it is less than 1.5 times. <br><br>
 
-										If the average angle of closest points between rows is around 90 degrees the triangle templates are penalised. Else the square and rectangle templates are penalised.<br><br>
+										If the average angle of closest points between rows is around 90 degrees the triangle templates are penalised, because for these templates it should be around 60 degrees. And likewise for the rectangle and square template if the  angle is around 60 degrees. <br><br>
 
 										This is done so that the noise does not return false positives from the template matching. The spacing penalisation is fairly arbitrary, but it is necessary to have a cut off point else the rectangle and isosceles templates would not be able to be differentiated from the square and equilateral triangle templates. <br><br>
 
 										 </p>
+
              
               <!-- View More Details -->
               
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="img-content">
-              <img class="img-responsive" src="images/Template/SqRect.jpg" alt="">
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -381,12 +389,13 @@
           <div class="col-md-6">
             <!-- inner sub-title -->
             <div class="content">
-              
-              <p class="case-description">It was necessary to remove the quincunx template from the program because it always matches with square and rectangle patterns. Because of how the row detection algorithm works and how it orientates the image, the quincunx pattern template becomes a plus sign that matches extremely well with templates containing 90 degree angles. With the quincunx pattern always being detected and often outperforming the actual pattern present.
+             
+              <p class="case-description">It was necessary to remove the quincunx template from the program because it always matches with square and rectangle patterns. Because of how the row detection algorithm works and how it orientates the image, the quincunx pattern template becomes a plus sign that matches extremely well with templates containing 90 degree angles, as it matches to their corners. With the quincunx pattern always being detected and often outperforming the actual pattern present.
 						<br><br>
-						This is a problem that intensity based template matching has when determining details.
+						This is a problem that intensity based template matching has when determining details. This shows that the templates can be too similar to differentiate between. So template matching is a good solution for distinctions between types of patterns but not for variations of the same types as they would be too similar.
 
 						</p>
+
              
               <!-- View More Details -->
               
@@ -424,11 +433,11 @@
 				  </h5>
 				  <br>
 				  <br>
-                  <h5> Template matching is a good approach to this problem both in terms of accuracy and effciency.
+                  <h5> Template matching is a good approach to this problem both in terms of accuracy and effciency. However, it will struggle with samll differences in patterns.
 				  </h5>
 				  <br>
 				  <br>
-				  <h5> One can implement more complex row detection techniques and improve of template matching to increase the accuracy of the solution especially with noise data
+				  <h5> One can implement more complex row detection techniques and improve of template matching to increase the accuracy of the solution especially with noise data.
 				  </h5>
                   
                 </div>
@@ -468,11 +477,9 @@
                             ========================== -->
                             <div class="footer-address">
                                 <h3 class="footer-title">Developer</h3>
-                                <p>Template Matching solution developed by Jonathon Everatt.
-								<br>
-								https://github.com/KarmaZA
-								<br>
-								https://www.linkedin.com/in/jonathon-everatt-54049120a/</p>
+                                <p>Template Matching solution developed by Jonathon Everatt. Code, without real world data, available on Github.
+								<a href="https://github.com/KarmaZA/HonoursProject2021">Github Repository</a>
+								</p>
                             </div>
                         </div>
                         <div class="col-md-4">
