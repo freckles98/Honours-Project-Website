@@ -96,7 +96,7 @@
 
  <!-- Hero Area -section
   =========================-->
-  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src="images/hausdorff/orchard2.jpg">
+  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src="images/slider/orchard2.jpg">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -368,7 +368,11 @@
             <div class="content">
               
               <p class="case-description"> 
-                TO DO
+                <br>The approach could correctly identify the rectangular pattern in all given data sets. However, where the Hausdorff distance window was too small, incorrect patterns were detected, i.e. on the border.
+                <br> <br>  Detecting a round or boundary is not possibly using the Hausdorff Distance approach. It is a very challenging problem to solve and after 30 years of research there is still no road detection published or on the market. Thus it was not achieved in this paper.
+                <br> <br>The average Hausdorff distance was the best at aligning data and correctly identifying the planting pattern. The table on the right shows all the tests run on datasets and allocates a number 1 to 5 to each test. 5 being the best score and 1 being the worst score. This clearly demonstrates how the average Hausdorff outperforms the other approaches. These tests also demonstrate the length of time taken for each experiment. 
+                It is clear that the algorithm is not computationally efficient and very inefficient when implementing rotations.
+
               </p>
              
               <!-- View More Details -->
@@ -377,7 +381,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/hausdorff/ckdtree.jpg" alt="">
+              <img class="img-responsive" src="images/hausdorff/table.png" alt="">
             </div>
           </div>
         </div>
@@ -386,66 +390,100 @@
    
   </section>
 
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="container">
-                    <div class="footer-top">
-                        <div class="col-md-4">
-                            <!-- footer About section
-                            ========================== -->
-                            <div class="footer-about">
-                                <h3 class="footer-title">About</h3>
-                                <p>A team of 3 honours students <br>
-                                    soving the problem of orchard structure <br>
-                                    classification for the company Aerobotics. <br>
-                                    Computer Science Honours 2021.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <!-- footer Address section
-                            ========================== -->
-                            <div class="footer-address">
-                                <h3 class="footer-title">Address</h3>
-                                <p>Computer Science Department <br>
-				University of Cape Town <br>
-				Private Bag X3 <br>
-				Rondebosch</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <!-- footer Media link section
-                            ========================== -->
-                            <div class="footer-social-media">
-                                <h3 class="footer-title">Keep in touch</h3>
-                                <ul class="footer-media-link">
-                                    <li><a href="#"><i class="tf-ion-social-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-linkedin-outline"
-                                                aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="tf-ion-social-google-outline" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li><a href="#"><i class="tf-ion-social-instagram-outline"
-                                                aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="text-center">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>&copy; 2013-2017 All rights reserved. <br>
-                                    Design and Developed By <a href="https://themefisher.com">Themefisher.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+   <!-- Conlcusion
+  =========================-->
+  <section class="clients" data-parallax="scroll" data-image-src="images/slider/orchard2.jpg">
+    <div class="section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title text-center">
+              <h2>Conclusions</h2>
             </div>
-        </div>
-    </footer>
+            <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0 slider-main">
+              <div class="testimonial-slider">
+                <div class="item">
+                  <!-- Slider item -->
+                  <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
+                  <div class="testimonials-area">
+                    <!-- <div class="round-shape"></div> -->
+            <h5> 
+              The Hausdorff distance performs well when aggregating points within noisy datasets and is able to detect the planting pattern within the provided data. 
+              However, as most of the data supplied contains rectangular patterns, it cannot be pronounced a robust method until tested on more data containing the patterns to be detected. 
+              <br><br>The matching algorithm needs to account more accurately for different window sizes by implementing a better approach that accounts for more trees within the window. 
+              Reducing runtime is the most important aspect of improving this implementation. This can be achieved through finding an effective pruning process.
+            </h5>
+                    
+                  </div>
+                  <!-- </div> -->
+                  <!-- End Slider item -->
+                </div>
+                  <!-- End Slider item -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.End row -->
+      </div>
+    </div>
+    </section>
+
+   
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="container">
+                  <div class="footer-top">
+                      <div class="col-md-4">
+                          <!-- footer About section
+                          ========================== -->
+                          <div class="footer-about">
+                              <h3 class="footer-title">About</h3>
+                              <p>A team of 3 honours students <br>
+                                  solving the problem of orchard structure <br>
+                                  classification for the company Aerobotics. <br>
+                                  Computer Science Honours 2021.</p>
+                          </div>
+                      </div>
+          <div class="col-md-4">
+                          <!-- footer Address section
+                          ========================== -->
+                          <div class="footer-address">
+                              <h3 class="footer-title">Developer</h3>
+                              <p> The Hausdorff distance for orchard pattern classification was investigated by Chelsea Van Coller </p>
+              <br>
+              
+              <br>
+              </p>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <!-- footer Address section
+                          ========================== -->
+                          <div class="footer-address">
+                              <h3 class="footer-title">Address</h3>
+                              <p>Computer Science Department <br>
+                University of Cape Town <br>
+                Private Bag X3 <br>
+                Rondebosch</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="text-center">
+                      <div class="col-md-12">
+                          <div class="copyright">
+                            <p>Computer Science Honours 2021 <br>
+                              Web page by: Jonathon Everatt, Piero Puccini, Chelsea van Coller</p>
+                                          <p>&copy; 2013-2021 All rights reserved. <br>
+                                  
+                Template from https://themefisher.com</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
 
 
     <script src="plugins/jquery.min.js"></script>
