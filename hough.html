@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Template Matching</title>
+    <title>Hough Transform</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -170,7 +170,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="images/hough/HTOverview.png" alt="">
+              <img class="img-responsive" src="images/hough/HTOverview.png" alt="">  <i><caption>This is a</caption></i>
             </div>
           </div>
         </div>
@@ -198,13 +198,30 @@
               
               <p class="case-description">
 				<br><br><br>
-				To create a system that can solve for both of the aims of the project, a 3 step system was determined. These steps set up the necessary information for the next step while balancing accuracy and efficiency.<br><br>
-				<br><b>Step 1</b><br> <br>
-				The first stage was parameter extraction for the secondary aims. And to detect scale and rotation parameters that are necessary for the Template Matching algorithm. The dataset is broken up and graphed as multiple sub-images for template matching efficiency and accuracy.<br><br>
-				<br><b>Step 2</b><br> <br>
-				The second step was the application of the OpenCV template matching algorithm. Which scored each template based on the number of matches and their correlation scores.<br><br>
-				<br><b>Step 3</b><br> <br>
-				The final step evaluates the scores and penalises certain templates based on their characteristics. Then determine the present pattern and output the detected pattern and parameters.<br><br>
+				The process of investigating the use of the HT to find the primary and secondary aims was 
+        applied to idealized and real data in three steps:<br><br>
+				<br><b>Step 1: Pre-processing</b><br> <br>
+				 Centroid information of orchard trees calculated from geojson file of
+         polygon location information at different confidence levels is plotted.
+         This plotted information is saved as an image, where a canny edge detector is applied.
+         Pixel reduction is then applied to the edge image to increase accuracy when the HT 
+         is applied.
+           <br><br>
+				<br><b>Step 2: Applying the HT</b><br> <br>
+				Initially applying the python cv library HT at different threshold levels in order to  
+        find the main orientation represented by theta. This was then used to identify the secondary direction of
+        rows. The HT was then applied at both lower and higher threshold levels, with rho values associated to the theta 
+        angle of the main and secondary direction obtained.
+        <br><br>
+				<br><b>Step 3: Post-processing</b><br> <br>
+				Post processing is applied to the resulting rho values that indicate rows within an
+        each of the main and secondary directions. Line filtering is applied to remove false 
+        positive rows that are detected. The rho and theta information is then transformed back
+        into the cartisian space and an euclidean distance formula is applied to retrieve
+        secondary parameters, such as inter and intra row spacing. Corner point  locations are
+        identified by looking at the intercepts of the outer rows in both the main and secondary
+        directions. 
+        <br><br>
 				 </p>
              
               <!-- View More Details -->
@@ -222,7 +239,7 @@
    
   </section>
   
-<!-- Row Detection / Parameter extraction
+<!-- Pre processing
   =========================-->
 
   <section class="case-study">
@@ -460,7 +477,7 @@
                             <div class="footer-about">
                                 <h3 class="footer-title">About</h3>
                                 <p>A team of 3 honours students <br>
-                                    soving the problem of orchard structure <br>
+                                    solving the problem of orchard structure <br>
                                     classification for the company Aerobotics. <br>
                                     Computer Science Honours 2021.</p>
                             </div>
@@ -470,11 +487,11 @@
                             ========================== -->
                             <div class="footer-address">
                                 <h3 class="footer-title">Developer</h3>
-                                <p>Template Matching solution developed by Jonathon Everatt.
+                                <p>
 								<br>
-								https://github.com/KarmaZA
+								
 								<br>
-								https://www.linkedin.com/in/jonathon-everatt-54049120a/</p>
+							  </p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -493,7 +510,7 @@
                         <div class="col-md-12">
                             <div class="copyright">
                                 <p>&copy; 2013-2017 All rights reserved. <br>
-                                    Design and Developed By Jonathon Everatt. <br>
+                                    
 									Template from https://themefisher.com</p>
                             </div>
                         </div>
