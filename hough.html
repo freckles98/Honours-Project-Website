@@ -223,11 +223,11 @@
             <br></br><br>
             <div class="img-content">
               <img class="img-responsive" style = "max-width:30%" src="images/hough/Centroids.png" alt="">
-              <i><div class="caption" style="text-align:center">Subsection of Tree Centroids</div></i>
+              <i><div class="caption" style="text-align:center">Subsection of tree centroids</div></i>
             </div>
             <div class="img-content">
               <img class="img-responsive" style = "max-width:30%" src="images/hough/EdgeDet.png" alt="">
-              <i><div class="caption" style="text-align:center">Edge Map of Centroids</div></i>
+              <i><div class="caption" style="text-align:center">Edge map of centroids</div></i>
             </div>
             <div class="img-content">
               <img class="img-responsive" style = "max-width:35%" src="images/hough/Pixel_Reduct.png" alt="">
@@ -240,7 +240,7 @@
    
   </section>
   
-<!-- Pre processing
+<!--Hough Transform Application
   =========================-->
 
   <section class="case-study">
@@ -264,16 +264,17 @@
                  <b>Step 1: HT Application to find Orientation </b><br><br>
                    The Hough transform is used at increasing threshold values in order to obtain
                    the main orientation of the orchard structure, represented by the theta value. This is further used to extract the 
-                   secondary orientation of the orchard which is at 90 degrees to the main orientation   
+                   secondary orientation of the orchard which is at 90 degrees to the main orientation.   
                   <br><br>
                <br><b>Step 2: HT applied at low and high thresholds</b><br> <br>
                The theta values for the main and secondary orientation are used to extract the 
-               rho values which represent the actual rows within the orchard structure for each direction. 
+               rho values which represent the positions of the rows within the orchard structure for each direction. 
                <br><br>
                
                The application of the HT results in multiple rho values being determined for each of
                the main and secondary direction. These values need to be post-processed in order
-               to identify the correct rows within the orchard structure and extract secondary aims.
+               to reduce false positive rows. That output can then be used identify the correct rows 
+               within the orchard structure, leading to pattern detection and extracting secondary aims.
                
                
 										 </p>
@@ -310,7 +311,7 @@
                    Due to centroid variations within rows leading to multiple lines representing the 
                    same row in an orchard, line filtering is used to combine these into single orchard rows. 
                    This is based on a margin of error between HT output rho values.
-                   false positive row identification    
+                   false positive row identification.    
                   <br><br>
                <br><b>Step 2: Conversion from Hough Space to Cartisian Space</b><br> <br>
                Filtered rows represented in Hough space as Rho and Theta values are converted into 
@@ -345,7 +346,7 @@
             </div>
           </div>
           <div class = "col-md-6">
-               <i><div class="caption" style="text-align:center">Effect of Line Filtering to Reduce False Positives </div></i>
+               <i><div class="caption" style="text-align:center">Effect of Line Filtering to reduce False Positives </div></i>
           </div>
           <div class="col-md-6">
             <div class="img-content">
@@ -357,7 +358,7 @@
             <div class="img-content">
               <img class="img-responsive" style = "max-width:30%" src="images/hough/Corner.png" alt="">
             </div>
-            <i><div class="caption" style="text-align:center">Identifying Corner Positions using intercpet of Main and Secondary Directions </div></i>
+            <i><div class="caption" style="text-align:center">Identifying corner positions using intercpet between Main and Secondary directions </div></i>
           </div>
         </div>
       </div>
@@ -391,11 +392,11 @@
                 are identified multiple times even after line filtering is applied.  <br><br>
                  
                  Ground noise at lower confidence levels led to excess rows being identified, resulting in poor
-                 pattern classification <br><br>
+                 pattern classification. <br><br>
                  
                  Missing corner centroids at higher confidence levels led to difficulties in 
                  identifying corner positions as intercepts of outside rows cannot be matched to 
-                 pixels at these positions<br><br>	
+                 pixels at these positions.<br><br>	
                 </p>
              
               <!-- View More Details -->
@@ -424,7 +425,7 @@
             </div>
           </div>
           <div class = "col-md-6">
-          <i><div class="caption" col =6 style="text-align:center">Ground Noise Resulting in False Positive lines being identified</div></i>
+          <i><div class="caption" col =6 style="text-align:center">Ground Noise resulting in False Positive lines being identified</div></i>
           </div>  
         </div>
         
